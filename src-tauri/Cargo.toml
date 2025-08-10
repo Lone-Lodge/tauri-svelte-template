@@ -1,0 +1,23 @@
+[package]
+name = "tauri-svelte-pro"
+version = "0.1.0"
+description = "Pro Tauri + Svelte starter"
+authors = ["You"]
+license = "MIT"
+edition = "2021"
+
+[build-dependencies]
+tauri-build = { version = "1", features = [] }
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+anyhow = "1"
+thiserror = "1"
+tauri = { version = "1", features = ["shell-open"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+[features]
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]

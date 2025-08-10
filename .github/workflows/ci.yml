@@ -1,0 +1,32 @@
+name: CI
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with: { version: 9 }
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+      - name: Install deps
+        run: pnpm install
+      - name: Typecheck
+        run: pnpm check
+      - name: Lint
+        run: pnpm lint
+      - name: Unit tests
+        run: pnpm test:coverage
+      - name: E2E (Playwright)
+        run: pnpm test:e2e
+      - name: Upload coverage html
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-html
+          path: coverage

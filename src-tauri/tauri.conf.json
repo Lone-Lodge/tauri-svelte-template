@@ -1,0 +1,40 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/schema.json",
+  "package": { 
+    "productName": "Tauri Svelte Pro", 
+    "version": "0.1.0" 
+  },
+  "build": {
+    "beforeDevCommand": "pnpm dev",
+    "beforeBuildCommand": "pnpm build",
+    "devPath": "http://localhost:5173",
+    "distDir": "../dist"
+  },
+  "tauri": {
+    "bundle": {
+      "active": true,
+      "identifier": "com.tauri.svelteapp",
+      "targets": "all",
+      "icon": []
+    },
+    "security": {
+      "csp": null
+    },
+    "windows": [
+      { 
+        "title": "Tauri + Svelte Pro", 
+        "width": 1100, 
+        "height": 700,
+        "resizable": true,
+        "fullscreen": false
+      }
+    ],
+    "allowlist": {
+      "all": false,
+      "shell": { 
+        "all": false,
+        "open": true 
+      }
+    }
+  }
+}

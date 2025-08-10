@@ -1,0 +1,18 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Test Tauri Build",
+			"type": "shell",
+			"command": "cargo",
+			"args": [
+				"build"
+			],
+			"group": "build",
+			"isBackground": false,
+			"problemMatcher": [
+				"$rustc"
+			]
+		}
+	]
+}

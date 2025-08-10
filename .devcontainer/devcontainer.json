@@ -1,0 +1,8 @@
+{
+  "name": "Tauri Svelte Pro",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:20",
+  "features": {
+    "ghcr.io/devcontainers/features/rust:1": {}
+  },
+  "postCreateCommand": "corepack enable && pnpm install && pnpm playwright install --with-deps"
+}
