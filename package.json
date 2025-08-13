@@ -20,7 +20,12 @@
     "build-storybook": "storybook build",
     "prepare": "husky && playwright install --with-deps || true",
     "commit": "cz",
-    "release": "release-please release-pr"
+    "release": "release-please release-pr",
+    "dev:workspace": "turbo run dev",
+    "build:workspace": "turbo run build",
+    "test:workspace": "turbo run test",
+    "lint:workspace": "turbo run lint",
+    "fmt:workspace": "turbo run fmt"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
